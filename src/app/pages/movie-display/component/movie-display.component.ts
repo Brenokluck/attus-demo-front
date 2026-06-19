@@ -20,7 +20,6 @@ import { MovieDisplayService } from '../service/movie-display.service';
 })
 export class MovieDisplayComponent {
   @Input() movies: MoviesInterface[] = [];
-  private datePipe = Inject(DatePipe);
   private messageService = Inject(MessageService);
   private router = Inject(Router);
   private route = Inject(ActivatedRoute);
