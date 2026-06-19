@@ -1,5 +1,5 @@
 
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { MovieDisplayComponent } from '../../movie-display/component/movie-display.component';
 import {
@@ -24,7 +24,7 @@ export class MainPagecomponent implements OnInit {
   pages: PaginatedInterface<MoviesInterface> =
     {} as PaginatedInterface<MoviesInterface>;
 
-  private mainPageService = Inject(MainPageService);
+  private mainPageService = inject(MainPageService);
 
   ngOnInit(): void {
     this.getPaginatedContent(0);
