@@ -8,7 +8,7 @@ import {
   MoviesInterface,
 } from '../../../../shared/interfaces/movies.interface';
 import { ActivatedRoute } from '@angular/router';
-import { Router } from 'express';
+import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { MovieDisplayService } from '../service/movie-display.service';
 
