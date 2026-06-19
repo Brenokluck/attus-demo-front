@@ -1,0 +1,45 @@
+<div class="movie__box">
+  <p-toast />
+  @for (movie of movies; track movie) {
+  <div class="movie__data">
+    <div class="movie__delete">
+      <a class="pi pi-trash" (click)="deleteMovie(movie)"></a>
+      <a class="pi pi-pencil" (click)="editMovie(movie)"></a>
+    </div>
+
+    <a class="movie__title">{{ movie.title }}</a>
+    <div class="movie__launch">
+      <a>Data de Lançamento:</a>
+      <a>{{ movie.launch_date | date : "dd/MM/yyyy" }}</a>
+    </div>
+    <div class="review__stars">
+      <a class="box__office">Box Office:</a>
+      <a>$</a>
+      <a>{{ movie.views }}</a>
+    </div>
+    <div class="movie__duration">
+      <a>Duração:</a>
+      <a>{{ movie.duration }}</a>
+      <a>min</a>
+    </div>
+    <p-rating [(ngModel)]="movie.review_stars" [readonly]="true" [stars]="10" />
+    <div class="movie__interactions">
+      <a
+        class="pi pi-heart-fill"
+        (click)="interactWithMovie(movie, { favorite: true })"
+      ></a>
+      <a
+        class="pi pi-eye"
+        (click)="interactWithMovie(movie, { watched: true })"
+      ></a>
+      <a
+        class="pi pi-thumbs-down-fill"
+        (click)="interactWithMovie(movie, { blackList: true })"
+      ></a>
+    </div>
+    <div>
+      <a>{{ movie.description }}</a>
+    </div>
+  </div>
+  }
+</div>

@@ -1,0 +1,32 @@
+<p>movie-form works!</p>
+<div class="movie__form" [formGroup]="form">
+  <p-toast />
+  <a>Titulo:</a>
+  <input type="text" pInputText formControlName="title" />
+  <a>Descrição:</a>
+  <textarea
+    rows="5"
+    cols="30"
+    pTextarea
+    formControlName="description"
+  ></textarea>
+  <a>Data de Lançamento:</a>
+  <p-datepicker formControlName="launch_date" />
+
+  <a>Nota:</a>
+  <p-rating type="number" formControlName="review_stars" [stars]="10" />
+
+  <a>Duração:</a>
+  <input type="text" pInputText formControlName="duration" />
+
+  <a>Box Office:</a>
+  <p-inputnumber
+    formControlName="views"
+    inputId="currency-us"
+    mode="currency"
+    currency="USD"
+    locale="en-US"
+  />
+
+  <button pButton type="submit" label="Submit" (click)="submit()"></button>
+</div>

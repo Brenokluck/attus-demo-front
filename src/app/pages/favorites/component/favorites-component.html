@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+
+<app-movie-display [movies]="movies"></app-movie-display>
+
+<app-page
+  [totalRecords]="pages.totalElements"
+  (pageChange)="getPaginatedContent($event.page || 0)"
+></app-page>
