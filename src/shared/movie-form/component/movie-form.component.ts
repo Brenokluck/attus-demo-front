@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { CommonModule } from '@angular/common';
+
 import { ButtonModule } from 'primeng/button';
 import { DatePickerModule } from 'primeng/datepicker';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -20,7 +20,6 @@ import { ToastModule } from 'primeng/toast';
 @Component({
   selector: 'app-movie-form',
   imports: [
-    CommonModule,
     FormsModule,
     InputTextModule,
     ReactiveFormsModule,
@@ -29,8 +28,8 @@ import { ToastModule } from 'primeng/toast';
     InputNumberModule,
     ButtonModule,
     TextareaModule,
-    ToastModule,
-  ],
+    ToastModule
+],
   providers: [MessageService],
   templateUrl: './movie-form.component.html',
   styleUrl: './movie-form.component.scss',

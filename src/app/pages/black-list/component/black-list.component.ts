@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Inject, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { PageComponent } from '../../../../shared/page/component/page.component';
@@ -14,11 +14,10 @@ import { BlackListService } from '../service/black-list.service';
 @Component({
   selector: 'app-black-list',
   imports: [
-    CommonModule,
     MovieDisplayComponent,
     NavbarComponent,
-    PageComponent,
-  ],
+    PageComponent
+],
   templateUrl: './black-list.component.html',
   styleUrl: './black-list.component.scss',
 })

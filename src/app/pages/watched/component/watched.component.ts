@@ -6,18 +6,17 @@ import {
 } from '../../../../shared/interfaces/movies.interface';
 import { WatchedService } from '../service/watched.service';
 import { PageComponent } from '../../../../shared/page/component/page.component';
-import { CommonModule } from '@angular/common';
+
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { MovieDisplayComponent } from '../../movie-display/component/movie-display.component';
 
 @Component({
   selector: 'app-watched-component',
   imports: [
-    CommonModule,
     MovieDisplayComponent,
     NavbarComponent,
-    PageComponent,
-  ],
+    PageComponent
+],
   templateUrl: './watched.component.html',
   styleUrl: './watched.component.scss',
 })

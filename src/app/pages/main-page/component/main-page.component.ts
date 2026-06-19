@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Inject, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { MovieDisplayComponent } from '../../movie-display/component/movie-display.component';
@@ -12,11 +12,10 @@ import { PageComponent } from '../../../../shared/page/component/page.component'
 @Component({
   selector: 'app-main-page',
   imports: [
-    CommonModule,
     MovieDisplayComponent,
     NavbarComponent,
-    PageComponent,
-  ],
+    PageComponent
+],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
 })

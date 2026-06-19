@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Inject, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { PageComponent } from '../../../../shared/page/component/page.component';
@@ -13,11 +13,10 @@ import { FavoritesService } from '../service/favorites.service';
 @Component({
   selector: 'app-favorites-component',
   imports: [
-    CommonModule,
     MovieDisplayComponent,
     NavbarComponent,
-    PageComponent,
-  ],
+    PageComponent
+],
   templateUrl: './favorites-component.html',
   styleUrl: './favorites-component.scss',
 })
