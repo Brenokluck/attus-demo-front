@@ -1,4 +1,3 @@
-
 import { Component, inject, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { MovieDisplayComponent } from '../../movie-display/component/movie-display.component';
@@ -11,11 +10,7 @@ import { PageComponent } from '../../../../shared/page/component/page.component'
 
 @Component({
   selector: 'app-main-page',
-  imports: [
-    MovieDisplayComponent,
-    NavbarComponent,
-    PageComponent
-],
+  imports: [MovieDisplayComponent, NavbarComponent, PageComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
 })

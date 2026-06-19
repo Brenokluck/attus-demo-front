@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PaginatedInterface } from '../interfaces/movies.interface';
 import { HttpClient } from '@angular/common/http';

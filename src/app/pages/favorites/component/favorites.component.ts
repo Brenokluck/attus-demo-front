@@ -1,5 +1,4 @@
-
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { PageComponent } from '../../../../shared/page/component/page.component';
 import { MovieDisplayComponent } from '../../movie-display/component/movie-display.component';
@@ -12,11 +11,7 @@ import { FavoritesService } from '../service/favorites.service';
 
 @Component({
   selector: 'app-favorites-component',
-  imports: [
-    MovieDisplayComponent,
-    NavbarComponent,
-    PageComponent
-],
+  imports: [MovieDisplayComponent, NavbarComponent, PageComponent],
   templateUrl: './favorites-component.html',
   styleUrl: './favorites-component.scss',
 })
@@ -25,7 +20,7 @@ export class FavoritesComponent implements OnInit {
   pages: PaginatedInterface<MoviesInteractedInterface> =
     {} as PaginatedInterface<MoviesInteractedInterface>;
 
-  private favoritesPageService = Inject(FavoritesService);
+  private favoritesPageService = inject(FavoritesService);
 
   ngOnInit(): void {
     this.getPaginatedContent(0);

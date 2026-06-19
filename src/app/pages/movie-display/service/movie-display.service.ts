@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {
   MoviesInteractedInterface,
@@ -10,12 +10,12 @@ import {
   providedIn: 'root',
 })
 export class MovieDisplayService {
-  private httpClient = Inject(HttpClient);
+  private httpClient = inject(HttpClient);
 
   saveMovieWhenInteracted(
     movie: MoviesInteractedInterface
   ): Observable<MoviesInteractedInterface> {
-    return this.httpClient.post('/actions', movie);
+    return this.httpClient.post<MoviesInteractedInterface>('/actions', movie);
   }
 
   deleteMovie(movie: MoviesInterface, apiUrl: string): Observable<unknown> {

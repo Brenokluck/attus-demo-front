@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, Inject, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 import { ToastModule } from 'primeng/toast';
@@ -20,10 +20,10 @@ import { MovieDisplayService } from '../service/movie-display.service';
 })
 export class MovieDisplayComponent {
   @Input() movies: MoviesInterface[] = [];
-  private messageService = Inject(MessageService);
-  private router = Inject(Router);
-  private route = Inject(ActivatedRoute);
-  private movieDisplayService = Inject(MovieDisplayService);
+  private messageService = inject(MessageService);
+  private router = inject(Router);
+  private route = inject(ActivatedRoute);
+  private movieDisplayService = inject(MovieDisplayService);
 
   interactWithMovie(movie: MoviesInterface, event: any) {
     const movieInteraction = {

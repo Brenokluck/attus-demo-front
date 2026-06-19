@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   MoviesInterface,
   PaginatedInterface,
@@ -12,11 +12,7 @@ import { MovieDisplayComponent } from '../../movie-display/component/movie-displ
 
 @Component({
   selector: 'app-watched-component',
-  imports: [
-    MovieDisplayComponent,
-    NavbarComponent,
-    PageComponent
-],
+  imports: [MovieDisplayComponent, NavbarComponent, PageComponent],
   templateUrl: './watched.component.html',
   styleUrl: './watched.component.scss',
 })
@@ -25,7 +21,7 @@ export class WatchedComponent {
   pages: PaginatedInterface<MoviesInteractedInterface> =
     {} as PaginatedInterface<MoviesInteractedInterface>;
 
-  private watchedService = Inject(WatchedService);
+  private watchedService = inject(WatchedService);
 
   ngOnInit(): void {
     this.getPaginatedContent(0);

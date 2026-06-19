@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
 import { MenubarModule } from 'primeng/menubar';
@@ -12,7 +12,7 @@ import { MenubarModule } from 'primeng/menubar';
 export class NavbarComponent implements OnInit {
   items: MenuItem[] = [];
 
-  private router = Inject(Router);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.setItems();

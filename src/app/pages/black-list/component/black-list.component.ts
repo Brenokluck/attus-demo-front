@@ -1,5 +1,4 @@
-
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { NavbarComponent } from '../../../../shared/navbar/navbar.component';
 import { PageComponent } from '../../../../shared/page/component/page.component';
 import { MovieDisplayComponent } from '../../movie-display/component/movie-display.component';
@@ -13,11 +12,7 @@ import { BlackListService } from '../service/black-list.service';
 
 @Component({
   selector: 'app-black-list',
-  imports: [
-    MovieDisplayComponent,
-    NavbarComponent,
-    PageComponent
-],
+  imports: [MovieDisplayComponent, NavbarComponent, PageComponent],
   templateUrl: './black-list.component.html',
   styleUrl: './black-list.component.scss',
 })
@@ -26,7 +21,7 @@ export class BlackListComponent implements OnInit {
   pages: PaginatedInterface<MoviesInteractedInterface> =
     {} as PaginatedInterface<MoviesInteractedInterface>;
 
-  private blackListService = Inject(BlackListService);
+  private blackListService = inject(BlackListService);
 
   ngOnInit(): void {
     this.getPaginatedContent(0);

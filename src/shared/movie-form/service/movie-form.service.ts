@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MoviesInterface } from '../../interfaces/movies.interface';
 
@@ -7,9 +7,9 @@ import { MoviesInterface } from '../../interfaces/movies.interface';
   providedIn: 'root',
 })
 export class MovieFormService {
-  private httpClient = Inject(HttpClient);
+  private httpClient = inject(HttpClient);
 
   saveMovie(movie: unknown): Observable<MoviesInterface> {
-    return this.httpClient.post('/movies', movie);
+    return this.httpClient.post<MoviesInterface>('/movies', movie);
   }
 }
