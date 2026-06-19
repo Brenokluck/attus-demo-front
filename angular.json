@@ -33,6 +33,9 @@
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
+            },
+            "define": {
+              "process.env": "{}"
             }
           },
           "configurations": {
