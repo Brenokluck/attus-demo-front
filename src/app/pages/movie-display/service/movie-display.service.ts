@@ -17,7 +17,7 @@ export class MovieDisplayService {
     movie: MoviesInteractedInterface,
     url: string
   ): Observable<MoviesInteractedInterface> {
-    return this.httpClient.post<MoviesInteractedInterface>(
+    return this.httpClient.put<MoviesInteractedInterface>(
       `${environment.apiUrl}/movies/${url}`,
       movie
     );
