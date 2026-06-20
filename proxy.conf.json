@@ -1,16 +1,16 @@
 {
   "/movies": {
-    "target": "http://localhost:8080",
+    "target": "http://localhost:8080/api",
     "secure": false,
     "changeOrigin": true
   },
   "/actions": {
-    "target": "http://localhost:8080",
+    "target": "http://localhost:8080/api",
     "secure": false,
     "changeOrigin": true
   },
   "/IMDB": {
-    "target": "http://localhost:8080",
+    "target": "http://localhost:8080/api",
     "secure": false,
     "changeOrigin": true
   }

@@ -9,7 +9,10 @@ import { environment } from '../../../../environments/environment';
 export class ImportService {
   private httpClient = inject(HttpClient);
 
-  importMovie(ID: string): Observable<String> {
-    return this.httpClient.post<String>(`${environment.apiUrl}/IMDB/import/${ID}`, {});
+  importMovie(movieID: string): Observable<String> {
+    return this.httpClient.post<String>(
+      `${environment.apiUrl}/movies/IMDB/import/${movieID}`,
+      {}
+    );
   }
 }
