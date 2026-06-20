@@ -5,6 +5,7 @@ import {
   MoviesInteractedInterface,
   MoviesInterface,
 } from '../../../../shared/interfaces/movies.interface';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -15,10 +16,10 @@ export class MovieDisplayService {
   saveMovieWhenInteracted(
     movie: MoviesInteractedInterface
   ): Observable<MoviesInteractedInterface> {
-    return this.httpClient.post<MoviesInteractedInterface>('/actions', movie);
+    return this.httpClient.post<MoviesInteractedInterface>(`${environment.apiUrl}/actions`, movie);
   }
 
   deleteMovie(movie: MoviesInterface, apiUrl: string): Observable<unknown> {
-    return this.httpClient.delete(`${apiUrl}/${movie.id}`);
+    return this.httpClient.delete(`${environment.apiUrl}${apiUrl}/${movie.id}`);
   }
 }
