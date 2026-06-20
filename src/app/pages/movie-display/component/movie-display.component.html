@@ -7,38 +7,34 @@
       <a class="pi pi-pencil" (click)="editMovie(movie)"></a>
     </div>
 
-    <a class="movie__title">{{ movie.title }}</a>
+    <a class="movie__title">{{ movie.Title }}</a>
     <div class="movie__launch">
       <a>Data de Lançamento:</a>
-      <a>{{ movie.launch_date | date : "dd/MM/yyyy" }}</a>
+      <a> </a>
+      <a>{{ movie.Released | date : "dd/MM/yyyy" }}</a>
     </div>
     <div class="review__stars">
       <a class="box__office">Box Office:</a>
-      <a>$</a>
-      <a>{{ movie.views }}</a>
+      <a>{{ movie.BoxOffice }}</a>
     </div>
     <div class="movie__duration">
       <a>Duração:</a>
-      <a>{{ movie.duration }}</a>
-      <a>min</a>
+      <a>{{ movie.Runtime }}</a>
     </div>
-    <p-rating [(ngModel)]="movie.review_stars" [readonly]="true" [stars]="10" />
+    <p-rating [(ngModel)]="movie.imdbRating" [readonly]="true" [stars]="10" />
     <div class="movie__interactions">
-      <a
-        class="pi pi-heart-fill"
-        (click)="interactWithMovie(movie, { favorite: true })"
-      ></a>
-      <a
-        class="pi pi-eye"
-        (click)="interactWithMovie(movie, { watched: true })"
-      ></a>
-      <a
-        class="pi pi-thumbs-down-fill"
-        (click)="interactWithMovie(movie, { blackList: true })"
-      ></a>
+      <a (click)="interactWithMovie(movie, { watchLater: true }, 'favorite')"
+        >Like</a
+      >
+      <a (click)="interactWithMovie(movie, { watched: true }, 'watched')"
+        >Assistido</a
+      >
+      <a (click)="interactWithMovie(movie, { blackList: true }, 'blacklist')"
+        >Dislike</a
+      >
     </div>
     <div>
-      <a>{{ movie.description }}</a>
+      <a>{{ movie.Plot }}</a>
     </div>
   </div>
   }

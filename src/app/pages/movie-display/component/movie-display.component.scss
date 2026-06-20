@@ -1,0 +1,61 @@
+.movie__data {
+  display: grid;
+  padding: 2rem;
+  gap: 1rem;
+  max-width: 20rem;
+  margin: 1rem;
+
+  .movie__delete {
+    display: flex;
+    gap: 12rem;
+  }
+
+  & .pi.pi-trash {
+    cursor: pointer;
+  }
+
+  & .pi.pi-pencil {
+    cursor: pointer;
+  }
+}
+
+.review__stars {
+  display: flex;
+}
+
+.box__office {
+  padding-right: 2rem;
+}
+
+.movie__duration {
+  display: flex;
+  gap: 1rem;
+}
+
+.movie__box {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 3rem;
+}
+
+.movie__title {
+  text-align: center;
+}
+
+.movie__interactions {
+  display: flex;
+  gap: 4.9rem;
+
+  & .pi.pi-heart-fill {
+    cursor: pointer;
+  }
+
+  & .pi.pi-eye {
+    cursor: pointer;
+  }
+
+  & .pi.pi-thumbs-down-fill {
+    cursor: pointer;
+  }
+}

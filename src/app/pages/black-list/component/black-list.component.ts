@@ -32,13 +32,12 @@ export class BlackListComponent implements OnInit {
       this.movies = this.pages.content.map((movie) => {
         return {
           id: movie.movie_id.id,
-          title: movie.movie_id.title,
-          description: movie.movie_id.description,
-          launch_date: movie.movie_id.launch_date,
-          update_date: movie.movie_id.update_date,
-          views: movie.movie_id.views,
-          review_stars: movie.movie_id.review_stars,
-          duration: movie.movie_id.duration,
+          Title: movie.movie_id.Title,
+          Plot: movie.movie_id.Plot,
+          Released: movie.movie_id.Released,
+          BoxOffice: movie.movie_id.BoxOffice,
+          imdbRating: movie.movie_id.imdbRating,
+          Runtime: movie.movie_id.Runtime,
         } as MoviesInterface;
       });
     });

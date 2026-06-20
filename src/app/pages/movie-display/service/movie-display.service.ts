@@ -14,9 +14,13 @@ export class MovieDisplayService {
   private httpClient = inject(HttpClient);
 
   saveMovieWhenInteracted(
-    movie: MoviesInteractedInterface
+    movie: MoviesInteractedInterface,
+    url: string
   ): Observable<MoviesInteractedInterface> {
-    return this.httpClient.post<MoviesInteractedInterface>(`${environment.apiUrl}/actions`, movie);
+    return this.httpClient.post<MoviesInteractedInterface>(
+      `${environment.apiUrl}/movies/${url}`,
+      movie
+    );
   }
 
   deleteMovie(movie: MoviesInterface, apiUrl: string): Observable<unknown> {

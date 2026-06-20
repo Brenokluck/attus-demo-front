@@ -25,14 +25,14 @@ export class MovieDisplayComponent {
   private route = inject(ActivatedRoute);
   private movieDisplayService = inject(MovieDisplayService);
 
-  interactWithMovie(movie: MoviesInterface, event: any) {
+  interactWithMovie(movie: MoviesInterface, event: any, url: string = '') {
     const movieInteraction = {
       ...event,
       movie_id: movie,
     } as MoviesInteractedInterface;
 
     this.movieDisplayService
-      .saveMovieWhenInteracted(movieInteraction)
+      .saveMovieWhenInteracted(movieInteraction, url)
       .subscribe({
         next: () =>
           this.messageService.add({
