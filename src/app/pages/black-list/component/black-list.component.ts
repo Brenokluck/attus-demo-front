@@ -7,7 +7,6 @@ import {
   PaginatedInterface,
   MoviesInteractedInterface,
 } from '../../../../shared/interfaces/movies.interface';
-import { MovieDisplayService } from '../../movie-display/service/movie-display.service';
 import { BlackListService } from '../service/black-list.service';
 
 @Component({
